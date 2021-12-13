@@ -6,12 +6,13 @@ import {
   onMounted,
   watch,
   onBeforeUnmount,
+  shallowReadonly,
   shallowRef,
 } from "vue";
 
 import * as Monaco from "monaco-editor";
 
-import type { PropType } from "vue";
+import type { PropType, Ref } from "vue";
 import { createUseStyles } from "vue-jss";
 
 const useStyles = createUseStyles({
