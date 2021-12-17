@@ -2,7 +2,7 @@ export default {
   name: "Simple",
   schema: {
     description: "A simple form example.",
-    type: "string",
+    type: "object",
     required: ["firstName", "lastName"],
     properties: {
       firstName: {
@@ -16,10 +16,36 @@ export default {
         type: "string",
         minLength: 10,
       },
+      staticArray: {
+        type: "array",
+        items: [
+          {
+            type: "string",
+          },
+          {
+            type: "number",
+          },
+        ],
+      },
       singleTypeArray: {
         type: "array",
         items: {
+          type: "object",
+          properties: {
+            name: {
+              type: "string",
+            },
+            age: {
+              type: "number",
+            },
+          },
+        },
+      },
+      multiSelectArray: {
+        type: "array",
+        items: {
           type: "string",
+          enum: ["123", "456", "789"],
         },
       },
     },
@@ -44,6 +70,6 @@ export default {
     age: 75,
     bio: "Roundhouse kicking asses since 1940",
     password: "noneed",
-    singleTypeArray: ["jokcy"],
+    singleTypeArray: [{ name: "jokcy", age: 12 }],
   },
 };
