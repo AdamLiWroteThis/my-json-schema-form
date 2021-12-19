@@ -1,4 +1,4 @@
-import { defineComponent, PropType, ref, watch } from "vue";
+import { defineComponent, PropType, ref, watch, watchEffect } from "vue";
 
 export default defineComponent({
   name: "SelectionWidget",
@@ -20,10 +20,26 @@ export default defineComponent({
   },
   setup(props) {
     const currentValueRef = ref(props.value);
-    watch(currentValueRef, (oldv, newv) => {
-      if (newv === props.value) return;
-      props.onChange(newv);
+
+    watch(currentValueRef, (newv, oldv) => {
+      if (newv !== props.value) {
+        props.onChange(newv);
+      }
     });
+
+    watch(
+      () => props.value,
+      (v) => {
+        if (v !== currentValueRef.value) {
+          currentValueRef.value = v;
+        }
+      }
+    );
+
+    watchEffect(() => {
+      console.log(currentValueRef.value, "------------->");
+    });
+
     return () => {
       const { options } = props;
       return (
