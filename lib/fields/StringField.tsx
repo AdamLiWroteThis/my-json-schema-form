@@ -1,10 +1,18 @@
 import { defineComponent } from "vue";
+import { FieldPropsDefine } from "../types";
 
 export default defineComponent({
   name: "StringField",
-  setup() {
+  props: FieldPropsDefine,
+  setup(props) {
+    const handleChange = (e: any) => {
+      console.log(e);
+      props.onChange(e.target.value);
+    };
     return () => {
-      return <div>String Field</div>;
+      return (
+        <input type="text" value={props.value as any} onInput={handleChange} />
+      );
     };
   },
 });
