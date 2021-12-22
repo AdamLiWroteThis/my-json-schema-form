@@ -5,6 +5,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "build:core": "TYPE=lib vue-cli-service build --target lib lib/index.ts",
     "test:unit": "vue-cli-service test:unit --coverage",
     "lint": "vue-cli-service lint"
   },
