@@ -2,7 +2,6 @@ import { defineComponent, PropType } from "vue";
 import { FieldPropsDefine, Schema } from "../types";
 import { useVJSFContext } from "../context";
 import { createUseStyles } from "vue-jss";
-import SelectionWidget from "../widgets/Selection";
 
 const useStyles = createUseStyles({
   container: {
@@ -50,6 +49,8 @@ const ArrayItemWrapper = defineComponent({
   setup(props, { slots }) {
     const classesRef = useStyles();
 
+    const context = useVJSFContext();
+
     const hadleAdd = () => props.onAdd(props.index);
     const hadleDelete = () => props.onDelete(props.index);
     const hadleUp = () => props.onUp(props.index);
@@ -57,6 +58,7 @@ const ArrayItemWrapper = defineComponent({
 
     return () => {
       const classes = classesRef.value;
+
       return (
         <div class={classes.container}>
           <div class={classes.actions}>
@@ -138,10 +140,10 @@ export default defineComponent({
     };
 
     return () => {
+      const SelectionWidget = context.theme.widgets.SelectionWidget;
+
       const { schema, rootSchema, value } = props;
-
       const SchemaItem = context.SchemaItem;
-
       const isMultiType = Array.isArray(schema.items);
       const isSelect = schema.items && (schema.items as any).enum;
 

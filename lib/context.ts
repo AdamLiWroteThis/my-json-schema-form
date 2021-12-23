@@ -1,10 +1,10 @@
 import { inject } from "vue";
-import { CommonFieldType } from "./types";
+import { CommonFieldType, Theme } from "./types";
 
 export const SchemaFormContextKey = Symbol();
 
 export function useVJSFContext() {
-  const context: { SchemaItem: CommonFieldType } | undefined =
+  const context: { theme: Theme; SchemaItem: CommonFieldType } | undefined =
     inject(SchemaFormContextKey);
 
   if (!context) {
