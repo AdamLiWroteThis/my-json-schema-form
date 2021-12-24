@@ -4,7 +4,7 @@ import { CommonFieldType, Theme } from "./types";
 export const SchemaFormContextKey = Symbol();
 
 export function useVJSFContext() {
-  const context: { theme: Theme; SchemaItem: CommonFieldType } | undefined =
+  const context: { SchemaItem: CommonFieldType } | undefined =
     inject(SchemaFormContextKey);
 
   if (!context) {
