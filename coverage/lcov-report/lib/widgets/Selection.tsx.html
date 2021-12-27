@@ -22,9 +22,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">70.59% </span>
+                <span class="strong">11.76% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>12/17</span>
+                <span class='fraction'>2/17</span>
             </div>
         
             
@@ -36,16 +36,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">62.5% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>5/8</span>
+                <span class='fraction'>0/8</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">70.59% </span>
+                <span class="strong">11.76% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>12/17</span>
+                <span class='fraction'>2/17</span>
             </div>
         
             
@@ -54,7 +54,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -131,32 +131,32 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -184,17 +184,17 @@ export default defineComponent({
       required: true,
     },
   },
-  setup(props) {
-    const currentValueRef = ref(props.value);
+<span class="fstat-no" title="function not covered" >  setup(</span>props) {
+    const currentValueRef = <span class="cstat-no" title="statement not covered" >ref(p</span>rops.value);
 &nbsp;
-    watch(currentValueRef, <span class="fstat-no" title="function not covered" >(n</span>ewv, oldv) =&gt; {
+<span class="cstat-no" title="statement not covered" >    watch(c</span>urrentValueRef, <span class="fstat-no" title="function not covered" >(n</span>ewv, oldv) =&gt; {
 <span class="cstat-no" title="statement not covered" >      if (newv !== props.value) {</span>
 <span class="cstat-no" title="statement not covered" >        props.</span>onChange(newv);
       }
     });
 &nbsp;
-    watch(
-      () =&gt; props.value,
+<span class="cstat-no" title="statement not covered" >    watch(</span>
+<span class="fstat-no" title="function not covered" >      () =&gt; <span class="cstat-no" title="statement not covered" >p</span>rops.value,</span>
       (<span class="fstat-no" title="function not covered" >v) =&gt; </span>{
 <span class="cstat-no" title="statement not covered" >        if (v !== currentValueRef.value) {</span>
 <span class="cstat-no" title="statement not covered" >          currentValueRef.</span>value = v;
@@ -202,15 +202,15 @@ export default defineComponent({
       }
     );
 &nbsp;
-    watchEffect(() =&gt; {
-      console.log(currentValueRef.value, "-------------&gt;");
+<span class="cstat-no" title="statement not covered" >    watchEffect(<span class="fstat-no" title="function not covered" >(</span>) =&gt; </span>{
+<span class="cstat-no" title="statement not covered" >      console.</span>log(currentValueRef.value, "-------------&gt;");
     });
 &nbsp;
-    return () =&gt; {
-      const { options } = props;
-<span class="fstat-no" title="function not covered" >      return (</span>
+<span class="cstat-no" title="statement not covered" >    return <span class="fstat-no" title="function not covered" >(</span>) =&gt; </span>{
+      const { options } = <span class="cstat-no" title="statement not covered" >props;</span>
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >      return (</span></span>
         &lt;select multiple={true} v-model={<span class="cstat-no" title="statement not covered" >currentValueRef.value}&gt;</span>
-          {options.map((op) =&gt; (
+          {options.map(<span class="cstat-no" title="statement not covered" >(<span class="fstat-no" title="function not covered" >o</span>p) =&gt; (</span>
             &lt;option value={op.value}&gt;{op.key}&lt;/option&gt;
           ))}
         &lt;/select&gt;
@@ -225,7 +225,7 @@ export default defineComponent({
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Wed Dec 22 2021 13:27:47 GMT+0800 (中国标准时间)
+                at Mon Dec 27 2021 12:54:40 GMT+0800 (中国标准时间)
             </div>
         </div>
         <script src="../../prettify.js"></script>
